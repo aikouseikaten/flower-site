@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>フラワーショップあいこう</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Zen Maru Gothic',sans-serif;
+background:#fafafa;
+color:#444;
+}
+
+/* ヘッダー */
+
+header{
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+max-width:1400px;
+margin:auto;
+}
+
+.logo-main{
+height:140px;
+}
+
+.logo{
+height:70px;
+}
+
+nav{
+flex:1;
+text-align:center;
+}
+
+nav a{
+margin:0 25px;
+text-decoration:none;
+color:#444;
+font-weight:bold;
+font-size:20px;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#e91e63;
+left:0;
+bottom:-6px;
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+color:#e91e63;
+}
+
+/* トップスライド */
+
+.hero{
+height:600px;
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+animation:slide 9s infinite;
+filter:brightness(70%);
+}
+
+.slide:nth-child(1){background-image:url("top1.jpg")}
+.slide:nth-child(2){background-image:url("top2.jpg");animation-delay:3s}
+.slide:nth-child(3){background-image:url("top3.jpg");animation-delay:6s}
+
+@keyframes slide{
+0%{opacity:0}
+10%{opacity:1}
+30%{opacity:1}
+40%{opacity:0}
+100%{opacity:0}
+}
+
+/* キャッチコピー */
+
+.catch{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+font-size:70px;
+font-weight:bold;
+text-shadow:0 0 15px rgba(0,0,0,0.6);
+line-height:1.6;
+}
+
+/* セクション */
+
+section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* 商品 */
+
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.product-title{
+text-align:center;
+font-size:26px;
+margin:60px 0 25px;
+color:#555;
+}
+
+.card{
+background:white;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card p{
+padding:15px;
+text-align:center;
+font-size:17px;
+}
+
+/* お供え花 */
+
+.offering{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.offering .card{
+width:250px;
+}
+
+/* 注文ボタン */
+
+.order-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.base-button{
+display:block;
+width:260px;
+text-align:center;
+background:#e91e63;
+color:white;
+padding:18px;
+border-radius:40px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+transition:.3s;
+}
+
+.base-button:hover{
+background:#c2185b;
+transform:translateY(-2px);
+}
+
+/* Instagram */
+
+.instagram-section{
+max-width:1300px;
+margin:auto;
+}
+
+/* 会社情報 */
+
+#company{
+background:#f5f5f5;
+border-radius:12px;
+padding:40px;
+}
+
+.company{
+display:flex;
+gap:70px;
+flex-wrap:wrap;
+align-items:center;
+justify-content:center;
+}
+
+.company img{
+width:380px;
+border-radius:10px;
+}
+
+.company-info{
+font-size:16px;
+line-height:2.1;
+min-width:420px;
+}
+
+section .base-button{
+margin:50px auto;
+}
+
+/* フッター */
+
+footer{
+text-align:center;
+padding:30px;
+background:#333;
+color:white;
+margin-top:60px;
+}
+
+/* 電話ボタン */
+
+.phone-button{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#e91e63;
+color:white;
+padding:16px 22px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 6px 12px rgba(0,0,0,0.2);
+display:none;
+}
+
+/* スマホ */
+
+@media(max-width:700px){
+
+header{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+nav a{
+display:inline-block;
+margin:8px 12px;
+font-size:18px;
+}
+
+.products{
+grid-template-columns:1fr;
+}
+
+.company{
+flex-direction:column;
+}
+
+.company-info{
+min-width:auto;
+}
+
+.company img{
+width:100%;
+}
+
+.catch{
+font-size:30px;
+}
+
+.phone-button{
+display:block;
+}
+
+.order-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header-inner">
+
+<img src="logo1.png" class="logo-main">
+
+<nav>
+<a href="#about">当店について</a>
+<a href="#products">商品案内</a>
+<a href="#company">会社情報</a>
+<a href="https://forms.gle/nFkVXd8wgVA5KQRh9" target="_blank">お問い合わせ</a>
+</nav>
+
+<img src="logo.png" class="logo">
+
+</div>
+
+</header>
+
+<div class="hero">
+
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+<div class="catch">
+大切な想いを花に込めて
+</div>
+
+</div>
+
+<section id="about">
+
+<h2>当店について</h2>
+
+<p style="text-align:center;font-size:18px;">
+釧路市のフラワーショップあいこうです。<br>
+花束・アレンジメント・スタンド花・胡蝶蘭など、<br>
+様々なお花を心を込めてお作りします。
+</p>
+
+</section>
+
+<section id="products">
+
+<h2>商品案内</h2>
+
+<h3 class="product-title">お祝い花</h3>
+
+<div class="products">
+
+<div class="card">
+<img src="flower1.jpg">
+<p>花束</p>
+</div>
+
+<div class="card">
+<img src="flower2.jpg">
+<p>アレンジメント</p>
+</div>
+
+<div class="card">
+<img src="flower3.jpg">
+<p>スタンド花</p>
+</div>
+
+<div class="card">
+<img src="flower4.jpg">
+<p>胡蝶蘭</p>
+</div>
+
+</div>
+
+<h3 class="product-title">お供え花</h3>
+
+<div class="offering">
+
+<div class="card">
+<img src="flower5.jpg">
+<p>花束</p>
+</div>
+
+<div class="card">
+<img src="flower6.jpg">
+<p>アレンジメント</p>
+</div>
+
+<div class="card">
+<img src="flower7.jpg">
+<p>スタンド供花</p>
+</div>
+
+</div>
+
+<div class="order-buttons">
+
+<a class="base-button" href="https://www.eflora.co.jp/efec030201.do?shop_id=201627" target="_blank">
+アレンジメント・花束の注文
+</a>
+
+<a class="base-button" href="https://www.eflora.co.jp/efec010306.do?delv_able=frdelv&shop_dir=1&st=1&form_id=009,010%27" target="_blank">
+お祝いスタンドの注文
+</a>
+
+<a class="base-button" href="https://www.eflora.co.jp/efec010306.do?stand_dir=1&use_id=039&shop_id=201627" target="_blank">
+供花スタンドの注文
+</a>
+
+</div>
+
+</section>
+
+<section class="instagram-section">
+
+<h2>Instagram</h2>
+
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-9158e70d-4c0f-4bd4-99cd-7af542be0d73"></div>
+
+</section>
+
+<section id="company">
+
+<h2>会社情報</h2>
+
+<div class="company">
+
+<div class="company-info">
+
+<p><strong>会社名</strong>　有限会社あいこう生花店</p>
+<p><strong>所在地</strong>　北海道釧路市新富町3-27</p>
+<p><strong>TEL</strong>　0154-24-2433</p>
+<p><strong>FAX</strong>　0154-24-7712</p>
+<p><strong>Mail</strong>　aikou-2@apost.plala.or.jp</p>
+<p><strong>営業時間</strong>　8:30～17:30（年中無休）</p>
+
+</div>
+
+<div>
+<img src="shop.jpg">
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>アクセス</h2>
+
+<iframe
+src="https://www.google.com/maps?q=北海道釧路市新富町3-27&output=embed"
+width="100%"
+height="400"
+style="border:0">
+</iframe>
+
+<a class="base-button" href="https://forms.gle/nFkVXd8wgVA5KQRh9" target="_blank">
+お問い合わせはこちら
+</a>
+
+</section>
+
+<footer>
+
+<p>© フラワーショップあいこう</p>
+
+</footer>
+
+<a href="tel:0154242433" class="phone-button">
+📞 電話する
+</a>
+
+</body>
+</html>
