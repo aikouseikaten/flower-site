@@ -558,11 +558,17 @@ style="border:0">
 <script>
 
 function toggleMenu(){
-const menu=document.getElementById("menu");
+
+const menu = document.getElementById("menu");
+
 menu.classList.toggle("active");
-if(menu.classList.contains("active");
+
+if(menu.classList.contains("active")){
+setTimeout(function(){
+menu.classList.remove("active");
 },2000);
 }
+
 }
 
 </script>
